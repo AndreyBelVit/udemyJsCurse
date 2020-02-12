@@ -9,12 +9,17 @@ var appData = {
     savings: false
 };
 
-var a1 = prompt("Введите обязательную статью расходов в этом месяце");
-var a2 = prompt("Во сколько обойдется?");
-var b1 = prompt("Введите обязательную статью расходов в этом месяце");
-var b2 = prompt("Во сколько обойдется?");
 
-appData.expenses[a1] = a2;
-appData.expenses[b1] = b2;
+for (var i = 0; i < 2; i++) {
+    var a = prompt("Введите обязательную статью расходов в этом месяце"),
+        b = prompt("Во сколько обойдется?");
+    if ((typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null &&
+        a != '' && b != '' && a.length < 50) {
+        console.log('done');
+        appData.expenses[a] = b;
+    }
+
+
+}
 
 console.log(appData.moneyData / 30);
